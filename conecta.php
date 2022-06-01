@@ -20,6 +20,6 @@ $conexao -> setAttribute(
 } catch (Exception $erro){
     die ("Erro: " .$erro -> getMessage());
 }
-// var_dump($conexao);
+// var_dump($conexao); 
 
 ?>
