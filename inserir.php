@@ -33,7 +33,7 @@ header("location:visualizar.php");
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cadastrar um novo aluno - Exercício CRUD com PHP e MySQL</title>
-<link href="css/style.css" rel="stylesheet">
+<link href="css/bootstrap.css" rel="stylesheet">
 </head>
 <body>
 <div class="container">
@@ -58,5 +58,8 @@ header("location:visualizar.php");
     <hr>
     <p><a href="index.php">Voltar ao início</a></p>
 </div>
+
+<script src="js/bootstrap.bundle.js"></script>
+
 </body>
 </html>

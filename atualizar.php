@@ -30,8 +30,6 @@ if(isset($_POST['atualizar-dados'])){
     
     // header("Refresh:3; url=listar.php");
 }
-
-
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +38,7 @@ if(isset($_POST['atualizar-dados'])){
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Atualizar dados - Exercício CRUD com PHP e MySQL</title>
-<link href="css/style.css" rel="stylesheet">
+<link href="css/bootstrap.css" rel="stylesheet">
 </head>
 <body>
 <div class="container">
@@ -76,6 +74,9 @@ if(isset($_POST['atualizar-dados'])){
     
     <hr>
     <p><a href="visualizar.php">Voltar à lista de alunos</a></p>
+    
+    <script src="js/bootstrap.bundle.js"></script>
+
 </div>
 </body>
 </html>
