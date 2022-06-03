@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Exercício CRUD com PHP e MySQL</title>
-<link href="style.css" rel="stylesheet">
+<link href="css/bootstrap.css" rel="stylesheet">
+
 </head>
 <body>
 <div class="container">
@@ -17,5 +18,8 @@
         <li><a href="inserir.php">Inserir novo aluno</a></li>
     </ul>
 </div>
+
+<script src="js/bootstrap.bundle.js"></script>
+
 </body>
 </html>

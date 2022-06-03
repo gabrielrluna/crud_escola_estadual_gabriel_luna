@@ -15,7 +15,8 @@ $listaAlunos = lerAlunos($conexao);
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lista de alunos - Exercício CRUD com PHP e MySQL</title>
-<link href="css/style.css" rel="stylesheet">
+<link href="css/bootstrap.css" rel="stylesheet">
+
 </head>
 <body>
 <div class="container">
@@ -55,7 +56,7 @@ $listaAlunos = lerAlunos($conexao);
                         <td><?= $aluno['media'] ?></td>
                         <td><?= $aluno['situacao'] ?></td>
                         <td><a href="atualizar.php?id=<?= $aluno['id'] ?>&aluno<?= $aluno['nome'] ?>">Atualizar</a></td>
-                        <td><a href="excluir.php?id=<?= $aluno['id'] ?>&aluno<?= $aluno['nome'] ?>">Excluir</a></td>
+                        <td><a class="excluir" href="excluir.php?id=<?= $aluno['id'] ?>&aluno<?= $aluno['nome'] ?>">Excluir</a></td>
                     </tr>
                 <?php
                 }
@@ -69,7 +70,22 @@ $listaAlunos = lerAlunos($conexao);
 
     <p><a href="index.php">Voltar ao início</a></p>
 </div>
+    <script>
+        const excluir = document.querySelectorAll('.excluir');
+        // console.log(excluir);
+        for (let i = 0; i < excluir.length; i++) {
+            excluir[i].addEventListener('click', function(event) {
+                event.preventDefault();
+                let resultado = confirm("Você realmente quer excluir o aluno?");
+                if (resultado) location.href = excluir[i].getAttribute('href');
+
+            });
+        }
+    </script>
 </body>
+
+<script src="js/bootstrap.bundle.js"></script>
+
 </html>
 
    <!-- Aqui você deverá criar o HTML que quiser e o PHP necessários
