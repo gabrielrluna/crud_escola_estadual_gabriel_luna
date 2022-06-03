@@ -15,30 +15,33 @@ $listaAlunos = lerAlunos($conexao);
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lista de alunos - Exercício CRUD com PHP e MySQL</title>
+<link rel="stylesheet" href="style.css">
 <link href="css/bootstrap.css" rel="stylesheet">
 
 </head>
 <body>
-<div class="container">
+<div class="container-fluid btn btn-light">
     <h1>Lista de alunos</h1>
     <hr>
     
-    <p><a href="inserir.php">Inserir novo aluno</a></p>
+    <p><a class="btn btn-dark" href="inserir.php">Inserir novo aluno</a></p>
 
     <?php if (isset($_GET['status']) && $_GET['status'] == 'sucesso') { ?>
             <p>Fabricante atualizado com sucesso!</p>
         <?php } ?>
 
-        <table>
+        <!-- <caption>Lista de Alunos</caption> -->
+
+        <table class="table">
             <caption>Lista de Alunos</caption>
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>Primeira nota</th>
-                    <th>Segunda nota</th>
-                    <th>Média</th>
-                    <th>Situação</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Primeira nota</th>
+                    <th scope="col">Segunda nota</th>
+                    <th scope="col">Média</th>
+                    <th scope="col">Situação</th>
                     <th colspan="2">Operações</th>
                 </tr>
             </thead>
@@ -48,15 +51,15 @@ $listaAlunos = lerAlunos($conexao);
                     foreach ($listaAlunos as $aluno) {
     ?>
 
-                    <tr>
+                    <tr class="<?= $aluno['situacao'] ?>">
                         <td><?= $aluno['id'] ?></td>
                         <td><?= $aluno['nome'] ?></td>
                         <td><?= $aluno['primeira'] ?></td>
                         <td><?= $aluno['segunda'] ?></td>
                         <td><?= $aluno['media'] ?></td>
                         <td><?= $aluno['situacao'] ?></td>
-                        <td><a href="atualizar.php?id=<?= $aluno['id'] ?>&aluno<?= $aluno['nome'] ?>">Atualizar</a></td>
-                        <td><a class="excluir" href="excluir.php?id=<?= $aluno['id'] ?>&aluno<?= $aluno['nome'] ?>">Excluir</a></td>
+                        <td><a class="btn btn-primary" href="atualizar.php?id=<?= $aluno['id'] ?>&aluno<?= $aluno['nome'] ?>">Atualizar</a></td>
+                        <td><a class="excluir btn btn-danger" href="excluir.php?id=<?= $aluno['id'] ?>&aluno<?= $aluno['nome'] ?>">Excluir</a></td>
                     </tr>
                 <?php
                 }
@@ -68,7 +71,7 @@ $listaAlunos = lerAlunos($conexao);
         </table>
 
 
-    <p><a href="index.php">Voltar ao início</a></p>
+    <p><a class="btn btn-dark" href="index.php">Voltar ao início</a></p>
 </div>
     <script>
         const excluir = document.querySelectorAll('.excluir');

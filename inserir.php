@@ -36,7 +36,7 @@ header("location:visualizar.php");
 <link href="css/bootstrap.css" rel="stylesheet">
 </head>
 <body>
-<div class="container">
+<div class="container-fluid btn btn-dark">
 	<h1>Cadastrar um novo aluno </h1>
     <hr>
     		
@@ -53,10 +53,10 @@ header("location:visualizar.php");
 
         <br>
       
-        <button type="submit" name="inserir">Cadastrar aluno</button>
+        <button class="btn btn-success" type="submit" name="inserir">Cadastrar aluno</button>
 	</form>
     <hr>
-    <p><a href="index.php">Voltar ao início</a></p>
+    <p><a class="btn btn-info" href="index.php">Voltar ao início</a></p>
 </div>
 
 <script src="js/bootstrap.bundle.js"></script>

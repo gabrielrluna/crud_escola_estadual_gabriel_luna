@@ -15,7 +15,8 @@ if(isset($_POST['atualizar-dados'])){
     $media = ($primeira + $segunda)/2;
 
     if ($media >= 7){
-        $situacao = "Aprovado!";
+        $situacao = "Aprovado";
+
     } else {
         $situacao = "Reprovado";
     }
@@ -40,8 +41,8 @@ if(isset($_POST['atualizar-dados'])){
 <title>Atualizar dados - Exercício CRUD com PHP e MySQL</title>
 <link href="css/bootstrap.css" rel="stylesheet">
 </head>
-<body>
-<div class="container">
+<body >
+<div class="container-fluid btn btn-dark ">
     <h1>Atualizar dados do aluno </h1>
     <hr>
     		
@@ -69,11 +70,11 @@ if(isset($_POST['atualizar-dados'])){
 	        <input value="<?= $aluno ['situacao'] ?>"type="text" name="situacao" id="situacao" readonly disabled>
         </p>
 	    
-        <button name="atualizar-dados">Atualizar dados do aluno</button>
+        <button class="btn btn-success" name="atualizar-dados">Atualizar dados do aluno</button>
 	</form>    
     
     <hr>
-    <p><a href="visualizar.php">Voltar à lista de alunos</a></p>
+    <p><a class="btn btn-primary" href="visualizar.php">Voltar à lista de alunos</a></p>
     
     <script src="js/bootstrap.bundle.js"></script>
 
